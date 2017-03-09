@@ -1,0 +1,15 @@
+<launch>
+
+
+<!-- Launching USB CAM launch files and Dynamixel controllers -->
+
+  <include file="$(find face_tracker_pkg)/launch/start_tracking.launch"/> 
+  <include file="$(find face_tracker_control)/launch/start_dynamixel.launch"/> 
+
+
+<!-- Starting face tracker node -->
+
+   <node name="face_controller" pkg="face_tracker_control" type="face_tracker_controller" output="screen" />
+
+
+</launch>

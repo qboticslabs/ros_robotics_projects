@@ -1,0 +1,23 @@
+
+<!-- This will open USB To Dynamixel controller and search for servos -->
+<launch>
+    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                pan_port:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 1000000
+                    min_motor_id: 1
+                    max_motor_id: 25
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+<!-- This will launch the Dynamixel pan controller -->
+
+  <include file="$(find face_tracker_control)/launch/start_pan_controller.launch"/> 
+
+
+</launch>
+

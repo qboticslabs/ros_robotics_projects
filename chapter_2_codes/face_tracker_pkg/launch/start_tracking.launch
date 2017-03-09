@@ -1,0 +1,15 @@
+<launch>
+
+
+<!-- Launching USB CAM launch files and Dynamixel controllers -->
+
+  <include file="$(find face_tracker_pkg)/launch/start_usb_cam.launch"/> 
+  <!--<include file="$(find face_tracker_control)/launch/start_dynamixel.launch"/>  -->
+
+
+<!-- Starting face tracker node -->
+   <rosparam file="$(find face_tracker_pkg)/config/track.yaml" command="load"/>
+
+   <node name="face_tracker" pkg="face_tracker_pkg" type="face_tracker_node" output="screen" />
+
+</launch>

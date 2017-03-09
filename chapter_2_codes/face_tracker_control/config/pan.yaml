@@ -1,0 +1,12 @@
+pan_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: pan_joint
+    joint_speed: 1.17
+    motor:
+        id: 1
+        init: 512
+        min: 316
+        max: 708

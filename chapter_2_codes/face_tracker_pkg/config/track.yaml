@@ -1,0 +1,6 @@
+image_input_topic: "/usb_cam/image_raw"
+face_detected_image_topic: "/face_detector/raw_image"
+haar_file_face: "/home/robot/ros_robotics_projects_ws/src/face_tracker_pkg/data/face.xml"
+face_tracking: 1
+display_original_image: 1
+display_tracking_image: 1

@@ -1,0 +1,8 @@
+servomaxx: 0.5   #max degree servo horizontal (x) can turn
+servomin: -0.5   # Min degree servo horizontal (x) can turn
+screenmaxx: 640   #max screen horizontal (x)resolution
+center_offset: 50  #offset pixels from actual center to right and left
+step_distancex: 0.01 #x servo rotation steps
+
+
+
