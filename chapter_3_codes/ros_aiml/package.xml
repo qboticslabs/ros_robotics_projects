@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>ros_aiml</name>
+  <version>0.0.0</version>
+  <description>The ros_aiml package</description>
+
+  <maintainer email="qboticslabs@gmail.com">Lentin Joseph</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sound_play</run_depend>
+
+
+</package>

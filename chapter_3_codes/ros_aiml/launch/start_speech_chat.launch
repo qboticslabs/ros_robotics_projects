@@ -1,0 +1,22 @@
+<launch>
+
+
+
+	<param name="aiml_path" value="/home/robot/ros_robotics_projects_ws/src/ros_aiml/data" />
+
+	<node name="aiml_server" pkg="ros_aiml" type="aiml_server.py" output="screen">
+	</node>
+
+
+	<include file="$(find sound_play)/soundplay_node.launch"></include>
+	<node name="aiml_tts" pkg="ros_aiml" type="aiml_tts_client.py" output="screen">
+	</node>
+
+
+	<node name="aiml_speech_recog" pkg="ros_aiml" type="aiml_speech_recog_client.py" output="screen">
+	</node>
+
+
+
+
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+
+	<param name="aiml_path" value="/home/robot/ros_robotics_projects_ws/src/ros_aiml/data" />
+	
+
+	<node name="aiml_server" pkg="ros_aiml" type="aiml_server.py" output="screen">
+	</node>
+
+	<node name="aiml_client" pkg="ros_aiml" type="aiml_client.py" output="screen">
+	</node>
+
+
+
+</launch>
