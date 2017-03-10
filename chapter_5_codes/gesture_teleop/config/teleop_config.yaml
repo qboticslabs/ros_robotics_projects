@@ -1,0 +1,13 @@
+imu_topic: "/imu_data"
+
+#Teleop command for turtlebot
+#teleop_topic: "/cmd_vel_mux/input/teleop"
+#Teleop command for turtlebot in turtlesim 2D
+#teleop_topic: "/turtle1/cmd_vel"
+
+low_speed: -4
+high_speed: 4
+low_turn: -2
+high_turn: 2
+step_size: 0.02
+

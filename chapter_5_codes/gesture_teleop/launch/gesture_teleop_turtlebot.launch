@@ -1,0 +1,17 @@
+<launch>
+
+  <param name="teleop_topic" value="/cmd_vel_mux/input/teleop"/>
+
+<!-- Loading teleop parameter file -->
+ <rosparam command="load" file="$(find gesture_teleop)/config/teleop_config.yaml"/>
+
+<!-- Launching ros serial nodes -->
+ <node name="rosserial_server_node" pkg="rosserial_python" type="serial_node.py" args="$(arg port)" output="screen"/>
+
+<!-- Starting gesture teleop node -->
+ <node name="gesture_teleop_node" pkg="gesture_teleop" type="gesture_teleop.py" output="screen"/>
+
+<!-- Starting turtlebot gazebo simualtion -->
+ <include file="$(find turtlebot_gazebo)/launch/turtlebot_empty_world.launch" />
+
+</launch>

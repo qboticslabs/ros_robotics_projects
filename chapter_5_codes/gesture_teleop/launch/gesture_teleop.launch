@@ -1,0 +1,12 @@
+<launch>
+
+
+ <param name="teleop_topic" value="/cmd_vel"/>
+
+ <rosparam command="load" file="$(find gesture_teleop)/config/teleop_config.yaml"/>
+
+ <node name="rosserial_server_node" pkg="rosserial_python" type="serial_node.py" args="$(arg port)" output="screen"/>
+
+ <node name="gesture_teleop_node" pkg="gesture_teleop" type="gesture_teleop.py" output="screen"/>
+
+</launch>
