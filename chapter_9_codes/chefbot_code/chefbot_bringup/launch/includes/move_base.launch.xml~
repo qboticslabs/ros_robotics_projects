@@ -1,0 +1,22 @@
+<!-- 
+    ROS navigation stack with velocity smoother and safety (reactive) controller
+-->
+<launch>
+  <include file="$(find turtlebot_navigation)/launch/includes/velocity_smoother.launch.xml"/> 
+  <include file="$(find turtlebot_navigation)/launch/includes/safety_controller.launch.xml"/> 
+
+  <arg name="odom_topic" default="odom" /> 
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find turtlebot_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find turtlebot_navigation)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find turtlebot_navigation)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot_navigation)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot_navigation)/param/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot_navigation)/param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot_navigation)/param/move_base_params.yaml" command="load" />
+
+	<remap from="cmd_vel" to="/cmd_vel_mux/input/navi"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+  </node>
+</launch>
