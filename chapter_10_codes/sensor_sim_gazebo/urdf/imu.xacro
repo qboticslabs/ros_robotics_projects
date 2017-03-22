@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot name="sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- camera -->
+
+
+  <xacro:include filename="$(find sensor_sim_gazebo)/urdf/sensor.xacro"/>
+
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>sensor</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>20.0</updateRate>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<robot name="sensor" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- camera -->
+
+
+
+    <link name="world"/>
+
+
+  <xacro:include filename="$(find sensor_sim_gazebo)/urdf/sonar_model.xacro"/>
+  <sonar_sensor parent="world" name="sonar" ros_topic="/distance" update_rate="10" min_range="0.3" max_range="2" field_of_view="56" ray_count="2" >
+    <origin xyz="0 0 0.4" rpy="0 0 0" />
+  </sonar_sensor>
+
+
+
+</robot>
