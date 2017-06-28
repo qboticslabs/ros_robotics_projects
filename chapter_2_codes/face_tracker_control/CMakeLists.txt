@@ -8,13 +8,14 @@ find_package(catkin REQUIRED COMPONENTS
   dynamixel_controllers
   roscpp
   rospy
-  std_msgs
   message_generation
+  std_msgs
+
 )
 
-find_package(Boost REQUIRED COMPONENTS system)
+#find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
 
-add_message_files(
+add_message_files(DIRECTORY msg
    FILES
    centroid.msg
  )
@@ -29,14 +30,20 @@ add_message_files(
 
 
 catkin_package(
-  CATKIN_DEPENDS dynamixel_controllers roscpp rospy std_msgs
+  CATKIN_DEPENDS message_runtime dynamixel_controllers roscpp rospy std_msgs
 
 )
+
+
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+
+
 add_executable(face_tracker_controller src/face_tracker_controller.cpp)
+add_dependencies(face_tracker_controller ${${PROJECT_NAME}_EXPORTED_TARGETS})
 target_link_libraries(face_tracker_controller ${catkin_LIBRARIES})
+
 
