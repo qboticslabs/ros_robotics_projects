@@ -14,6 +14,13 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(Boost REQUIRED COMPONENTS system)
 
+catkin_package(
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime 
+
+)
+
+
+
 add_message_files(
    FILES
    centroid.msg
@@ -26,11 +33,6 @@ add_message_files(
    std_msgs
   
  )
-
-catkin_package(
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime 
-
-)
 
 
 
