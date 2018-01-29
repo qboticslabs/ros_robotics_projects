@@ -14,11 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(Boost REQUIRED COMPONENTS system)
 
-catkin_package(
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime 
-
-)
-
 
 
 add_message_files(
@@ -34,7 +29,10 @@ add_message_files(
   
  )
 
+catkin_package(
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime 
 
+)
 
 
 include_directories(
