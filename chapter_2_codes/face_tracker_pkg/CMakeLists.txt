@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(Boost REQUIRED COMPONENTS system)
 
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui objdetect)
+
 
 
 add_message_files(
