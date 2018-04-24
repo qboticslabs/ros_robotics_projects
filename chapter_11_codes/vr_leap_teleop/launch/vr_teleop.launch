@@ -1,0 +1,5 @@
+<launch>
+
+	<node pkg="vr_leap_teleop" name="vr_leap_teleop" type="vr_leap_teleop.py" output="screen" />
+
+</launch>
