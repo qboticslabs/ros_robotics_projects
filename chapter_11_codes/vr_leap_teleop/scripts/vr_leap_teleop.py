@@ -48,29 +48,29 @@ def callback_ros(data):
     if(pitch > pitch_low_range and pitch < pitch_low_range + 30):
 	    twist.linear.x = high_speed; twist.linear.y = 0; twist.linear.z = 0
 	    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
-            #rospy.loginfo("Pitch high")
+            rospy.loginfo("Pitch high")
     
     elif(pitch > pitch_high_range and pitch < pitch_high_range + 30):
 	    twist.linear.x = low_speed; twist.linear.y = 0; twist.linear.z = 0
 	    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
-            #rospy.loginfo("Pitch low")
+            rospy.loginfo("Pitch low")
 
     
     if(roll > roll_low_range and roll < roll_low_range + 30):
 	    twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
 	    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = high_turn
-            #rospy.loginfo("Roll left")
+            rospy.loginfo("Roll left")
 
     
     elif(roll > roll_high_range and roll < roll_high_range + 30):
 	    twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
 	    twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = low_turn
-            #rospy.loginfo("Roll right")
+            rospy.loginfo("Roll right")
     
     
 
 
-    #pub.publish(twist)
+    pub.publish(twist)
 
     #rospy.loginfo(rospy.get_name() + ": Roll %s" % msg.ypr.x)
     #rospy.loginfo("\n")
