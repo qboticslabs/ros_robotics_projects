@@ -1,4 +1,4 @@
-# ROS Robotics Projects
+# ROS Robotics Projects-Packt
 
 #### [ROS Robotics Projects](http://rosrobots.com) 
 ![book_cover](http://rosrobots.com/img/ebook.png
